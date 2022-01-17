@@ -1,0 +1,118 @@
+/* MAIN APP STYLES */
+
+.App {
+  background: linear-gradient(to right, rgba(239, 189, 200, 0.5), transparent),
+    url("../assets/mars-svgrepo-com.svg") no-repeat right 1% center/40% 100%;
+  @apply font-outfit;
+  @apply bg-fixed;
+  @apply min-h-screen;
+}
+
+/* Header Styles */
+
+.header-wrapper,
+.header-nav_list {
+  @apply flex flex-row;
+}
+
+.header-wrapper {
+  @apply px-8 pt-4;
+}
+
+.header-logo {
+  @apply w-1/12;
+}
+
+.header-nav {
+  @apply w-11/12;
+}
+
+.header-logo_link {
+  @apply text-7xl;
+}
+
+.header-nav_list {
+  @apply h-full w-full;
+  @apply gap-12 items-center justify-center;
+}
+
+.header-nav_item-link {
+  @apply relative;
+  @apply pb-3;
+  @apply text-lg;
+}
+.navlink_line {
+  @apply absolute inset-x-0 bottom-0;
+  @apply h-1 w-0;
+  @apply bg-transparent;
+  @apply rounded-full;
+}
+
+.navlink_line-active {
+  @apply transition-all duration-500;
+  @apply w-full;
+  @apply bg-pink-300;
+}
+
+/* Main content general styling */
+.main-container {
+  @apply px-8 pb-6;
+}
+
+.main-title {
+  @apply text-4xl;
+  @apply font-semibold;
+  @apply mb-3;
+}
+
+.rover-manifest {
+  @apply capitalize;
+}
+
+/* Home page styles */
+
+.home-text {
+  @apply font-medium;
+  @apply px-6 mb-4;
+  @apply text-lg;
+}
+
+.home-text .home-text_link {
+  @apply font-black;
+  @apply text-black;
+  @apply underline decoration-double;
+}
+
+.home-quote {
+  @apply mx-auto mb-4;
+  @apply bg-white shadow;
+  @apply w-9/12;
+  @apply p-4;
+  @apply rounded-md;
+  @apply text-lg;
+}
+
+.home-text_quote {
+  @apply italic;
+}
+
+/* Camera Name container */
+
+.camera-container {
+  @apply relative;
+  @apply cursor-pointer;
+  @apply mr-1;
+}
+
+.camera-tooltip {
+  @apply absolute;
+  @apply top-full left-1/2 z-30 transform -translate-x-1/2;
+  transform: translateX(-50%);
+  @apply mt-1 p-1;
+  @apply w-max;
+  @apply text-center;
+  @apply text-xs;
+  @apply text-white;
+  @apply bg-black opacity-100 rounded-md;
+  @apply capitalize;
+}
