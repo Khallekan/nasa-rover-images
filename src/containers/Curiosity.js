@@ -1,11 +1,20 @@
 import { useCallback, useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import NavLink from "../components/NavLink";
 import CameraName from "../components/CameraName";
+import BySol from "../components/BySol";
+import ByEarthDate from "../components/ByEarthDate";
 import { initialManifest } from "../assets/data";
 import axios from "axios";
 
 const Curiosity = () => {
-  const [apiKey] = useState("api_key=7KYalu6ifNMQJ12xew85Ytqyf0crQELBPh08i7WP");
+  const [apiKey] = useState("api_key=KwKJE6zAyGjmjUcHugWB5jsLmtJZyUA3e0K4iOW7");
   const [roverManifest, setRoverManifest] = useState(initialManifest);
+  const [images, setImages] = useState([]);
+
+  console.log(images);
+
+  console.log(images);
 
   let {
     name,
@@ -33,6 +42,7 @@ const Curiosity = () => {
   }, [apiKey, setRoverManifest]);
 
   useEffect(() => {
+    // console.log(inputRef.current.earth_date.value());
     fetchManifest();
   }, [fetchManifest]);
 
@@ -59,19 +69,63 @@ const Curiosity = () => {
           </li>
         </ul>
       </div>
-      <form method='get'>
-        <input type='date' name='date' id='date' max={max_date} />
-        <select name='camera' id='camera'>
-          <option value='' selected>
-            None
-          </option>
-          {cameras.map(({ name }, index) => (
-            <option value={name} key={index}>
-              {name}
-            </option>
-          ))}
-        </select>
-      </form>
+      <div className='search-routes'>
+        <NavLink
+          className={`header-nav_item-link search-route_item`}
+          activeClassName={`header-nav_item-link_active`}
+          to={`sol`}
+          text={`Search by sol`}
+        />
+        <NavLink
+          className={`header-nav_item-link search-route_item`}
+          activeClassName={`header-nav_item-link_active`}
+          to={`earth-date`}
+          text={`Search by earth date`}
+        />
+      </div>
+      <Routes>
+        <Route
+          index
+          element={
+            <div className='home-text text-center'>
+              How will you like to search for pictures?
+            </div>
+          }
+        />
+        <Route
+          path={`sol`}
+          element={
+            <BySol max_sol={max_sol} cameras={cameras} setImages={setImages} />
+          }
+        />
+        <Route
+          path={`earth-date`}
+          element={
+            <ByEarthDate
+              max_date={max_date}
+              cameras={cameras}
+              setImages={setImages}
+            />
+          }
+        />
+      </Routes>
+      <div>
+        {images.length > 0 && (
+          <div>
+            {images.map(
+              ({
+                id,
+                img_src,
+                sol,
+                rover: { name: roverName },
+                camera: { full_name, name: cameraName },
+              }) => (
+                <div>{id}</div>
+              )
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

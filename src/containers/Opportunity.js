@@ -4,7 +4,7 @@ import { initialManifest } from "../assets/data";
 import axios from "axios";
 
 const Opportunity = () => {
-  const [apiKey] = useState("api_key=7KYalu6ifNMQJ12xew85Ytqyf0crQELBPh08i7WP");
+  const [apiKey] = useState("api_key=KwKJE6zAyGjmjUcHugWB5jsLmtJZyUA3e0K4iOW7");
   const [roverManifest, setRoverManifest] = useState(initialManifest);
 
   let {

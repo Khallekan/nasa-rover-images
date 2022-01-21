@@ -116,3 +116,40 @@
   @apply bg-black opacity-100 rounded-md;
   @apply capitalize;
 }
+
+.search-routes {
+  @apply w-full;
+  @apply flex flex-row items-center justify-center;
+  @apply gap-4;
+  @apply text-lg;
+}
+
+.search-route_item {
+  @apply p-3;
+  @apply hover:bg-pink-200/50;
+  @apply rounded-sm;
+  @apply capitalize;
+}
+/* form styling */
+.form-general {
+  @apply md:w-4/5 lg:w-9/12;
+  @apply bg-white;
+  @apply mt-6 mx-auto p-6;
+  @apply grid grid-cols-2 justify-items-center gap-4;
+  @apply shadow-lg rounded-md;
+}
+
+.input-wrapper {
+  @apply flex flex-row items-center gap-1;
+}
+
+.input-cont {
+  @apply shadow-inner px-4 py-2 rounded-md;
+  @apply bg-pink-50;
+}
+button.form-btn[type="submit"] {
+  @apply col-span-2;
+  @apply px-4 py-2;
+  @apply transition-all;
+  @apply bg-gradient-to-t from-pink-50 to-pink-100 hover:bg-gradient-to-b;
+}

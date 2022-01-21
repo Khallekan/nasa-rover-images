@@ -13,9 +13,9 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Home />} />
-        <Route path={`curiosity`} element={<Curiosity />} />
-        <Route path={`spirit`} element={<Spirit />} />
-        <Route path={`opportunity`} element={<Opportunity />} />
+        <Route path={`curiosity/*`} element={<Curiosity />} />
+        <Route path={`spirit/*`} element={<Spirit />} />
+        <Route path={`opportunity/*`} element={<Opportunity />} />
         <Route path={`*`} element={<div>Page does not exist</div>} />
       </Routes>
     </div>

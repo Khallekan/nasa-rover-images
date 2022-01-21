@@ -69,17 +69,19 @@ const Home = () => {
       </p>
       <p className={`home-text`}>
         The Mars Rovers were equipped with various cameras:
-        <ul>
-          <li>FHAZ - Front Hazard Avoidance Camera</li>
-          <li>RHAZ - Rear Hazard Avoidance Camera</li>
-          <li>MAST - Mast Camera</li>
-          <li>CHEMCAM- Chemistry and Camera Complex</li>
-          <li>MAHLI - Mars Hand Lens Imager</li>
-          <li>MARDI - Mars Descent Imager</li>
-          <li>NAVCAM - Navigation Camera</li>
-          <li>PANCAM - Panoramic Camera</li>
-          <li>MINITES - Miniature Thermal Emission Spectrometer (Mini-TES)</li>
-        </ul>
+        <span>
+          <span>FHAZ - Front Hazard Avoidance Camera</span>
+          <span>RHAZ - Rear Hazard Avoidance Camera</span>
+          <span>MAST - Mast Camera</span>
+          <span>CHEMCAM- Chemistry and Camera Complex</span>
+          <span>MAHLI - Mars Hand Lens Imager</span>
+          <span>MARDI - Mars Descent Imager</span>
+          <span>NAVCAM - Navigation Camera</span>
+          <span>PANCAM - Panoramic Camera</span>
+          <span>
+            MINITES - Miniature Thermal Emission Spectrometer (Mini-TES)
+          </span>
+        </span>
       </p>
       <p className={`home-text`}>
         Now you can view what{" "}
